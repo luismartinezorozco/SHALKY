@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shalky Recreación & Eventos | Contacto</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1775046740987-8ec8dd78-e015-4357-929f-0c6b60bad4b9.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Playful fonts for kids recreation -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'title': ['"Chewy"', 'cursive'],
+                        'body': ['"Quicksand"', 'sans-serif'],
+                    },
+                    colors: {
+                        shalky: {
+                            green: '#39FF14', // Neon Green from splatter
+                            red: '#E31837',   // Red
+                            blue: '#0071CE',  // Blue
+                            orange: '#FF6600',// Orange
+                            purple: '#660099',// Purple
+                            pink: '#FF007F'   // Pink
+                        }
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar and minor tweaks */
+        body {
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .btn-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-hover-effect:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body min-h-screen relative flex items-center justify-center py-10 px-4 overflow-x-hidden bg-gray-900">
+
+    <!-- Background Image (URL 2) with dark overlay for readability -->
+    <div class="fixed inset-0 z-0 w-full h-full">
+        <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+        <img src="https://image2url.com/r2/default/images/1775046803881-7253d1b2-b851-4ee6-ac7c-352957cfdf22.png" 
+             alt="Background" 
+             class="w-full h-full object-cover object-center opacity-40">
+    </div>
+
+    <!-- Main vCard Container -->
+    <main class="relative z-20 w-full max-w-md glass-card rounded-[2.5rem] shadow-2xl overflow-hidden border-4 border-shalky-green">
+        
+        <!-- Header / Banner (URL 1) -->
+        <div class="bg-black pt-8 pb-12 px-6 flex items-center justify-center relative overflow-hidden rounded-t-[2.2rem]">
+            <!-- Decorative colored circles behind logo -->
+            <div class="absolute top-0 left-0 w-32 h-32 bg-shalky-red rounded-full mix-blend-screen filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-32 h-32 bg-shalky-blue rounded-full mix-blend-screen filter blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
+            
+            <img src="https://image2url.com/r2/default/images/1775046740987-8ec8dd78-e015-4357-929f-0c6b60bad4b9.png" 
+                 alt="Shalky Logo Principal" 
+                 class="w-full max-w-[250px] object-contain drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] z-10 animate-float">
+        </div>
+
+        <!-- Floating Avatar (URL 3) -->
+        <div class="flex justify-center -mt-16 relative z-30">
+            <div class="bg-white p-2 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-4 border-shalky-green relative group cursor-pointer">
+                <img src="https://image2url.com/r2/default/images/1775046829228-d7547beb-39a9-4417-aa4f-287353cde72a.png" 
+                     alt="Shalky Avatar" 
+                     class="w-24 h-24 rounded-full object-contain group-hover:scale-110 transition-transform duration-300">
+                
+                <!-- Online indicator badge -->
+                <span class="absolute bottom-2 right-2 w-5 h-5 bg-shalky-green border-2 border-white rounded-full animate-pulse"></span>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="px-6 py-6 pb-8 text-center">
+            
+            <h1 class="font-title text-4xl text-gray-800 tracking-wide mb-1 drop-shadow-sm">SHALKY</h1>
+            <p class="text-sm font-bold text-gray-500 uppercase tracking-[0.2em] mb-8">Recreación & Eventos</p>
+
+            <!-- Buttons Grid -->
+            <div class="flex flex-col gap-4">
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/573046717506" target="_blank" rel="noopener noreferrer" 
+                   class="btn-hover-effect flex items-center justify-between px-6 py-4 bg-[#25D366] text-white rounded-2xl shadow-lg border-b-4 border-[#1ea852]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <span class="font-bold text-lg leading-tight">WhatsApp</span>
+                            <span class="text-xs font-semibold opacity-90">Escríbenos ahora</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right opacity-60"></i>
+                </a>
+
+                <!-- Phone -->
+                <a href="tel:+573046717506" 
+                   class="btn-hover-effect flex items-center justify-between px-6 py-4 bg-shalky-red text-white rounded-2xl shadow-lg border-b-4 border-[#b8122a]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-phone-alt text-xl"></i>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <span class="font-bold text-lg leading-tight">Llamar</span>
+                            <span class="text-xs font-semibold opacity-90">304 671 7506</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right opacity-60"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/Shalky_recreacionyeventos" target="_blank" rel="noopener noreferrer" 
+                   class="btn-hover-effect flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F56040] text-white rounded-2xl shadow-lg border-b-4 border-[#c71717]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <span class="font-bold text-lg leading-tight">Instagram</span>
+                            <span class="text-xs font-semibold opacity-90">@Shalky_recreacionyeventos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right opacity-60"></i>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@shalkyrecreacionyeventos" target="_blank" rel="noopener noreferrer" 
+                   class="btn-hover-effect flex items-center justify-between px-6 py-4 bg-black text-white rounded-2xl shadow-lg border-b-4 border-gray-800">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <span class="font-bold text-lg leading-tight">TikTok</span>
+                            <span class="text-xs font-semibold opacity-90">@shalkyrecreacionyeventos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right opacity-60"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/search/top?q=Shalky%20Recreaci%C3%B3n%20y%20Eventos" target="_blank" rel="noopener noreferrer" 
+                   class="btn-hover-effect flex items-center justify-between px-6 py-4 bg-[#1877F2] text-white rounded-2xl shadow-lg border-b-4 border-[#125ab8]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <span class="font-bold text-lg leading-tight">Facebook</span>
+                            <span class="text-xs font-semibold opacity-90">Shalky Recreación y Eventos</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right opacity-60"></i>
+                </a>
+            </div>
+
+            <!-- Download vCard Button -->
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <button onclick="downloadVCard()" 
+                        class="w-full py-4 bg-gray-100 text-gray-800 font-bold text-lg rounded-2xl border-2 border-dashed border-gray-300 hover:bg-shalky-blue hover:text-white hover:border-shalky-blue transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fas fa-address-book text-xl"></i> 
+                    Guardar Contacto
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JavaScript to generate and download the .vcf file -->
+    <script>
+        function downloadVCard() {
+            // vCard Data Construction
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+N:Recreación & Eventos;Shalky;;;
+FN:Shalky Recreación & Eventos
+ORG:Shalky Recreación & Eventos
+TITLE:Servicios de Recreación
+TEL;TYPE=WORK,VOICE,CELL:+573046717506
+URL:https://instagram.com/Shalky_recreacionyeventos
+URL:https://tiktok.com/@shalkyrecreacionyeventos
+NOTE:Servicios de recreación y eventos infantiles.\\nInstagram: @Shalky_recreacionyeventos\\nTikTok: @shalkyrecreacionyeventos\\nFacebook: Shalky Recreación y Eventos
+END:VCARD`;
+
+            // Create a Blob containing the vCard data
+            const blob = new Blob([vcardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            
+            // Create a temporary anchor element to trigger download
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Shalky_Contacto.vcf');
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up the URL object
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
