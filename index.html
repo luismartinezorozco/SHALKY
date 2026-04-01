@@ -17,7 +17,7 @@
     <!-- Google Fonts: Playful fonts for kids recreation -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Quicksand:wght@500;700;900&family=Titan+One&display=swap" rel="stylesheet">
 
     <!-- Custom Tailwind Configuration -->
     <script>
@@ -26,6 +26,7 @@
                 extend: {
                     fontFamily: {
                         'title': ['"Chewy"', 'cursive'],
+                        'logo': ['"Titan One"', 'sans-serif'],
                         'body': ['"Quicksand"', 'sans-serif'],
                     },
                     colors: {
@@ -41,11 +42,26 @@
                     animation: {
                         'bounce-slow': 'bounce 3s infinite',
                         'float': 'float 4s ease-in-out infinite',
+                        'splash-1': 'float1 4s ease-in-out infinite',
+                        'splash-2': 'float2 5.5s ease-in-out infinite',
+                        'splash-3': 'float3 4.5s ease-in-out infinite',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-10px)' },
+                        },
+                        float1: {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(-10px, -10px) scale(1.08)' },
+                        },
+                        float2: {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(10px, 15px) scale(1.1)' },
+                        },
+                        float3: {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(-15px, 10px) scale(1.05)' },
                         }
                     }
                 }
@@ -73,6 +89,14 @@
             transform: translateY(-4px) scale(1.02);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+
+        /* Sticker effect for SHALKY text */
+        .text-sticker {
+            text-shadow: 
+                2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+                0px 2px 0 #fff, 2px 0px 0 #fff, 0px -2px 0 #fff, -2px 0px 0 #fff,
+                3px 4px 5px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body class="font-body min-h-screen relative flex items-center justify-center py-10 px-4 overflow-x-hidden bg-gray-900">
@@ -94,9 +118,37 @@
             <div class="absolute top-0 left-0 w-32 h-32 bg-shalky-red rounded-full mix-blend-screen filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
             <div class="absolute bottom-0 right-0 w-32 h-32 bg-shalky-blue rounded-full mix-blend-screen filter blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
             
+            <!-- Splashes de pintura generados con la nueva imagen mediante mask-image -->
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <!-- Arriba Izquierda (Verde) -->
+                <div class="absolute -top-10 -left-12 w-48 h-48 opacity-90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-splash-1">
+                    <div class="w-full h-full rotate-[15deg] bg-shalky-green" style="-webkit-mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"></div>
+                </div>
+                <!-- Arriba Derecha (Amarillo) -->
+                <div class="absolute -top-16 -right-10 w-52 h-52 opacity-80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-splash-2">
+                    <div class="w-full h-full rotate-[105deg] bg-[#FFFF00]" style="-webkit-mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"></div>
+                </div>
+                <!-- Medio Izquierda (Rosa/Rojo) -->
+                <div class="absolute top-1/4 -left-16 w-40 h-40 opacity-85 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-splash-3">
+                    <div class="w-full h-full -rotate-[45deg] bg-shalky-pink" style="-webkit-mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"></div>
+                </div>
+                <!-- Medio Derecha (Morado) -->
+                <div class="absolute top-1/3 -right-12 w-48 h-48 opacity-90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-splash-1">
+                    <div class="w-full h-full rotate-[210deg] bg-shalky-purple" style="-webkit-mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"></div>
+                </div>
+                <!-- Abajo Izquierda (Turquesa) -->
+                <div class="absolute -bottom-12 -left-10 w-48 h-48 opacity-80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-splash-2">
+                    <div class="w-full h-full rotate-[75deg] bg-[#00FFFF]" style="-webkit-mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"></div>
+                </div>
+                <!-- Abajo Derecha (Naranja) -->
+                <div class="absolute -bottom-16 -right-8 w-56 h-56 opacity-85 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-splash-3">
+                    <div class="w-full h-full -rotate-[20deg] bg-shalky-orange" style="-webkit-mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('https://image2url.com/r2/default/images/1775051257147-d6b5f08f-0206-4bfc-85ee-39cc32940b5e.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"></div>
+                </div>
+            </div>
+
             <img src="https://image2url.com/r2/default/images/1775046740987-8ec8dd78-e015-4357-929f-0c6b60bad4b9.png" 
                  alt="Shalky Logo Principal" 
-                 class="w-full max-w-[250px] object-contain drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] z-10 animate-float">
+                 class="w-full max-w-[250px] object-contain drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] z-10 animate-float relative">
         </div>
 
         <!-- Floating Avatar (URL 3) -->
@@ -114,7 +166,9 @@
         <!-- Content Section -->
         <div class="px-6 py-6 pb-8 text-center">
             
-            <h1 class="font-title text-4xl text-gray-800 tracking-wide mb-1 drop-shadow-sm">SHALKY</h1>
+            <h1 class="font-logo text-5xl tracking-wider mb-2 text-sticker">
+                <span class="text-shalky-red">S</span><span class="text-shalky-blue">H</span><span class="text-shalky-orange">A</span><span class="text-shalky-purple">L</span><span class="text-shalky-green">K</span><span class="text-shalky-pink">Y</span>
+            </h1>
             <p class="text-sm font-bold text-gray-500 uppercase tracking-[0.2em] mb-8">Recreación & Eventos</p>
 
             <!-- Buttons Grid -->
@@ -135,12 +189,27 @@
                     <i class="fas fa-chevron-right opacity-60"></i>
                 </a>
 
+                <!-- Catálogo (New Button) -->
+                <a href="https://wa.me/c/573046717506" target="_blank" rel="noopener noreferrer" 
+                   class="btn-hover-effect flex items-center justify-between px-6 py-4 bg-shalky-orange text-white rounded-2xl shadow-lg border-b-4 border-[#cc5200]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-store text-xl"></i>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <span class="font-bold text-lg leading-tight">Catálogo</span>
+                            <span class="text-xs font-semibold opacity-90">Mira nuestros servicios</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right opacity-60"></i>
+                </a>
+
                 <!-- Phone -->
                 <a href="tel:+573046717506" 
                    class="btn-hover-effect flex items-center justify-between px-6 py-4 bg-shalky-red text-white rounded-2xl shadow-lg border-b-4 border-[#b8122a]">
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                            <i class="fas fa-phone-alt text-xl"></i>
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden p-[2px]">
+                            <img src="https://image2url.com/r2/default/images/1775046740987-8ec8dd78-e015-4357-929f-0c6b60bad4b9.png" alt="Logo Shalky" class="w-full h-full object-contain">
                         </div>
                         <div class="flex flex-col text-left">
                             <span class="font-bold text-lg leading-tight">Llamar</span>
@@ -219,9 +288,10 @@ FN:Shalky Recreación & Eventos
 ORG:Shalky Recreación & Eventos
 TITLE:Servicios de Recreación
 TEL;TYPE=WORK,VOICE,CELL:+573046717506
+URL:https://wa.me/c/573046717506
 URL:https://instagram.com/Shalky_recreacionyeventos
 URL:https://tiktok.com/@shalkyrecreacionyeventos
-NOTE:Servicios de recreación y eventos infantiles.\\nInstagram: @Shalky_recreacionyeventos\\nTikTok: @shalkyrecreacionyeventos\\nFacebook: Shalky Recreación y Eventos
+NOTE:Servicios de recreación y eventos infantiles.\\nCatálogo: https://wa.me/c/573046717506\\nInstagram: @Shalky_recreacionyeventos\\nTikTok: @shalkyrecreacionyeventos\\nFacebook: Shalky Recreación y Eventos
 END:VCARD`;
 
             // Create a Blob containing the vCard data
